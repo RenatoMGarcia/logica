@@ -1,0 +1,73 @@
+<meta charset="UTF-8">
+
+<input />
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    function numeroAleatorio() {
+
+        return Math.round(Math.random() * 10);
+
+    }
+
+    function sorteiaNumero(quantidade) {
+
+        var segredos = [];
+        var numero = 1;
+
+        while (numero <= quantidade) {
+            var numeroZika = numeroAleatorio();
+
+            if (numeroZika !== 0) {
+                var achou = false;
+
+                for (let i = 0; i < segredos.length; i++) {
+                    if (segredos[i] == numeroZika) {
+                        achou = true;
+                        break;
+                    }
+
+                }
+
+                if (achou == false) {
+
+                    segredos.push(numeroZika);
+                    numero++;
+
+                }
+            }
+        }
+        return segredos;
+    }
+
+    var segredos = sorteiaNumero(3);
+    console.log(segredos);
+
+    var input = document.querySelector("input");
+    var botaoVerifica = document.querySelector("button")
+    input.focus;
+
+
+    function verficaSegredo() {
+        var achou = false;
+
+        for (var i = 0; i < segredos.length; i++) {
+
+            if (input.value == segredos[i]) {
+                alert("Você acertou!!");
+                achou = true;
+                break;
+            }
+        }
+
+        if (achou == false) {
+            alert("Você errou!!")
+        }
+
+        input.value = "";
+        input.focus();
+    }
+
+    botaoVerifica.onclick = verficaSegredo;
+</script>

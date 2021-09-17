@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br>")
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var primeiraGeracao = 1500;
+    var ultimaGeracao = 2021;
+    var mediaIdade = 28
+
+    resultado = (ultimaGeracao - primeiraGeracao) / mediaIdade;
+
+
+    mostra("Desde 1500 se passaram " + Math.trunc(resultado) + " gerações");
+
+
+</script>

@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+<script>
+    function pulaLinha() {
+        document.write("<br>");
+    }
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+    function sorteio(n) {
+        var numeroAleatorio = Math.round(Math.random() * n);
+        return numeroAleatorio;
+    }
+    
+    var numeroPensado = sorteio(10);
+    
+    var maximoTentativa = 3;
+    var tentativaAtual = 1;
+
+    console.log(numeroPensado);
+    
+    while(tentativaAtual <= maximoTentativa) {
+
+        var numeroChute = parseInt(prompt("Digite um número: "));
+
+        if(numeroChute == numeroPensado) {
+            mostra("Você acertou");
+            tentativaAtual = maximoTentativa;
+        }else{
+            mostra("Você errou");
+        }
+        tentativaAtual++;
+    }
+
+    mostra("Fim");
+
+    
+</script>
